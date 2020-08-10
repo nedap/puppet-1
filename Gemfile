@@ -59,17 +59,14 @@ end
 
 group(:extra) do
   gem "rack", "~> 1.4", :require => false
-  gem "activerecord", '~> 3.2', :require => false
-  # this pin for i18n should *not* be in the puppet-4+ branches
-  # it's solely here because activerecord pulls in i18n and i18n
-  # was recently updated to require 1.9.3 which breaks 1.8.7 specs
-  gem "i18n", '~> 0.6.11', :require => false
-  gem "couchrest", '~> 1.0', :require => false
+  gem "activerecord", :require => false
+  gem "i18n", :require => false
+  gem "couchrest", :require => false
   gem "net-ssh", '~> 4.2.0', :require => false
   gem "puppetlabs_spec_helper", '2.15', :require => false
   # rest-client is used only by couchrest, so when
   # that dependency goes away, this one can also
-  gem "rest-client", '1.6.7', :require => false
+  gem "rest-client", :require => false
   gem "stomp", :require => false
   gem "tzinfo", :require => false
   case RUBY_PLATFORM

@@ -45,13 +45,13 @@ describe "documentation of faces" do
       # if you apply this to third party faces you might well be disappointed.
       context "licensing of Puppet Labs face '#{face_name}'" do
         subject { Puppet::Face[face_name, :current] }
-        its :license   do should =~ /Apache\s*2/ end
-        its :copyright do should =~ /Puppet Labs/ end
+        it :license   do should =~ /Apache\s*2/ end
+        it :copyright do should =~ /Puppet Labs/ end
 
         # REVISIT: This is less that ideal, I think, but right now I am more
         # comfortable watching us ship with some copyright than without any; we
         # can redress that when it becomes appropriate. --daniel 2011-04-27
-        its :copyright do should =~ /20\d{2}/ end
+        it :copyright do should =~ /20\d{2}/ end
       end
     end
   end

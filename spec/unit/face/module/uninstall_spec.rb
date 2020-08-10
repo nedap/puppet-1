@@ -35,14 +35,14 @@ describe "puppet module uninstall" do
   describe "inline documentation" do
     subject { Puppet::Face.find_action(:module, :uninstall) }
 
-    its(:summary)     { should =~ /uninstall.*module/im }
-    its(:description) { should =~ /uninstall.*module/im }
-    its(:returns)     { should =~ /uninstalled modules/i }
-    its(:examples)    { should_not be_empty }
+    it(:summary)     { should =~ /uninstall.*module/im }
+    it(:description) { should =~ /uninstall.*module/im }
+    it(:returns)     { should =~ /uninstalled modules/i }
+    it(:examples)    { should_not be_empty }
 
     %w{ license copyright summary description returns examples }.each do |doc|
       context "of the" do
-        its(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
+        it(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
       end
     end
   end

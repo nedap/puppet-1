@@ -101,10 +101,10 @@ describe "puppet module list" do
   describe "inline documentation" do
     subject { Puppet::Face[:module, :current].get_action(:list) }
 
-    its(:summary)     { should =~ /list.*module/im }
-    its(:description) { should =~ /list.*module/im }
-    its(:returns)     { should =~ /hash of paths to module objects/i }
-    its(:examples)    { should_not be_empty }
+    it(:summary)     { should =~ /list.*module/im }
+    it(:description) { should =~ /list.*module/im }
+    it(:returns)     { should =~ /hash of paths to module objects/i }
+    it(:examples)    { should_not be_empty }
   end
 
   describe "when rendering to console" do

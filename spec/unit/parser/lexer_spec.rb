@@ -459,15 +459,15 @@ shared_examples_for "handling `-` in standard variable names" do |prefix|
 end
 
 describe Puppet::Parser::Lexer::TOKENS[:DOLLAR_VAR] do
-  its(:skip_text) { should be_false }
-  its(:incr_line) { should be_false }
+  it(:skip_text) { should be_false }
+  it(:incr_line) { should be_false }
 
   it_should_behave_like "handling `-` in standard variable names", '$'
 end
 
 describe Puppet::Parser::Lexer::TOKENS[:VARIABLE] do
-  its(:skip_text) { should be_false }
-  its(:incr_line) { should be_false }
+  it(:skip_text) { should be_false }
+  it(:incr_line) { should be_false }
 
   it_should_behave_like "handling `-` in standard variable names", ''
 end
@@ -479,8 +479,8 @@ describe "the horrible deprecation / compatibility variables with dashes" do
     Puppet::Parser::Lexer::TOKENS[:VARIABLE_WITH_DASH]   => ''
   }.each do |token, prefix|
     describe token do
-      its(:skip_text) { should be_false }
-      its(:incr_line) { should be_false }
+      it(:skip_text) { should be_false }
+      it(:incr_line) { should be_false }
 
       context "when compatibly is disabled" do
         before :each do Puppet[:allow_variables_with_dashes] = false end

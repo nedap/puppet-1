@@ -487,7 +487,7 @@ describe Puppet::Type.type(:user) do
       end
       context "when purging is disabled" do
         let(:purge_param) { false }
-        its(:generate) { should be_empty }
+        it(:generate) { should be_empty }
       end
       context "when purging is enabled" do
         let(:purge_param) { my_fixture('authorized_keys') }

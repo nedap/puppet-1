@@ -187,14 +187,14 @@ describe "puppet module search" do
   describe "inline documentation" do
     subject { Puppet::Face[:module, :current].get_action :search }
 
-    its(:summary)     { should =~ /search.*module/im }
-    its(:description) { should =~ /search.*module/im }
-    its(:returns)     { should =~ /array/i }
-    its(:examples)    { should_not be_empty }
+    it(:summary)     { should =~ /search.*module/im }
+    it(:description) { should =~ /search.*module/im }
+    it(:returns)     { should =~ /array/i }
+    it(:examples)    { should_not be_empty }
 
     %w{ license copyright summary description returns examples }.each do |doc|
       context "of the" do
-        its(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
+        it(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
       end
     end
   end
