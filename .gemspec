@@ -21,8 +21,9 @@ end
 Gem::Specification.new do |s|
   s.name = "puppet"
   version = Puppet.version
-  mdata = version.match(/(\d+\.\d+\.\d+)/)
-  s.version = mdata ? mdata[1] : version
+  #mdata = version.match(/(\d+\.\d+\.\d+)/)
+  #s.version = mdata ? mdata[1] : version
+  s.version = version
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Puppet Labs"]
@@ -34,7 +35,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://puppetlabs.com"
   s.rdoc_options = ["--title", "Puppet - Configuration Management", "--main", "README", "--line-numbers"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = "puppet"
+  #s.rubyforge_project = "puppet"
   s.summary = "Puppet, an automated configuration management tool"
 
   s.add_dependency(%q<facter>, '2.5.7')
