@@ -4,6 +4,7 @@ require 'puppet/version'
 # Also see the new Vendor support - towards the end
 #
 require 'facter'
+require 'syck'
 require 'puppet/error'
 require 'puppet/util'
 require 'puppet/util/autoload'
