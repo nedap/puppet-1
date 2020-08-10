@@ -29,6 +29,9 @@ end
 gem "facter", '2.5.7'
 gem "hiera", '1.3.4'
 gem "rake", "12.3.3", :require => false
+gem "syck", '1.4.0'
+gem "sync", '0.5.0'
+gem "scanf", '1.0.0'
 
 group(:development, :test) do
   gem "rspec", "~> 3.9.0", :require => false
