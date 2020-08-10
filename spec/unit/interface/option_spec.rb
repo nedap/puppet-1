@@ -122,7 +122,7 @@ describe Puppet::Interface::Option do
 
     context "with no default" do
       it { should_not be_has_default }
-      its :default do should be_nil end
+      it :default do should be_nil end
 
       it "should set a proc as default" do
         expect { subject.default = proc { 12 } }.to_not raise_error
@@ -139,7 +139,7 @@ describe Puppet::Interface::Option do
       before :each do subject.default = proc { [:foo] } end
 
       it { should be_has_default }
-      its :default do should == [:foo] end
+      it :default do should == [:foo] end
 
       it "should invoke the block every time" do
         subject.default.object_id.should_not == subject.default.object_id

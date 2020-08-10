@@ -12,14 +12,14 @@ describe "puppet module upgrade" do
   describe "inline documentation" do
     subject { Puppet::Face[:module, :current].get_action :upgrade }
 
-    its(:summary)     { should =~ /upgrade.*module/im }
-    its(:description) { should =~ /upgrade.*module/im }
-    its(:returns)     { should =~ /hash/i }
-    its(:examples)    { should_not be_empty }
+    it(:summary)     { should =~ /upgrade.*module/im }
+    it(:description) { should =~ /upgrade.*module/im }
+    it(:returns)     { should =~ /hash/i }
+    it(:examples)    { should_not be_empty }
 
     %w{ license copyright summary description returns examples }.each do |doc|
       context "of the" do
-        its(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
+        it(doc.to_sym) { should_not =~ /(FIXME|REVISIT|TODO)/ }
       end
     end
   end
