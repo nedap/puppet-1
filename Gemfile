@@ -26,18 +26,13 @@ end
 if !ENV['PUPPET_LOADED']
   gem "puppet", :path => File.dirname(__FILE__), :require => false
 end
-gem "facter", *location_for(ENV['FACTER_LOCATION'] || ['> 1.6', '< 3'])
-gem "hiera", *location_for(ENV['HIERA_LOCATION'] || '~> 1.0')
-gem "rake", "10.1.1", :require => false
+gem "facter", '2.5.7'
+gem "hiera", '1.3.4'
+gem "rake", "12.3.3", :require => false
 
 group(:development, :test) do
-  gem "rspec", "~> 2.14.0", :require => false
-
-  # Mocha is not compatible across minor version changes; because of this only
-  # versions matching ~> 0.10.5 are supported. All other versions are unsupported
-  # and can be expected to fail.
-  gem "mocha", "~> 0.10.5", :require => false
-
+  gem "rspec", "~> 3.9.0", :require => false
+  gem "mocha", :require => false
   gem "yarjuf", "~> 1.0"
 
   # json-schema does not support windows, so omit it from the platforms list
@@ -65,8 +60,8 @@ group(:extra) do
   # was recently updated to require 1.9.3 which breaks 1.8.7 specs
   gem "i18n", '~> 0.6.11', :require => false
   gem "couchrest", '~> 1.0', :require => false
-  gem "net-ssh", '~> 2.1', :require => false
-  gem "puppetlabs_spec_helper", :require => false
+  gem "net-ssh", '~> 4.2.0', :require => false
+  gem "puppetlabs_spec_helper", '2.15', :require => false
   # rest-client is used only by couchrest, so when
   # that dependency goes away, this one can also
   gem "rest-client", '1.6.7', :require => false
