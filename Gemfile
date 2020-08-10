@@ -37,6 +37,8 @@ group(:development, :test) do
   gem "rspec", "~> 3.9.0", :require => false
   gem "mocha", :require => false
   gem "yarjuf", "~> 1.0"
+  gem "xmlrpc"
+  gem "net-telnet"
 
   # json-schema does not support windows, so omit it from the platforms list
   # json-schema uses multi_json, but chokes with multi_json 1.7.9, so prefer 1.7.7
