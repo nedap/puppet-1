@@ -20,10 +20,11 @@ end
 
 Gem::Specification.new do |s|
   s.name = "puppet"
-  version = Puppet.version
+  #version = Puppet.version
   #mdata = version.match(/(\d+\.\d+\.\d+)/)
   #s.version = mdata ? mdata[1] : version
-  s.version = version
+  # Hard code this here otherwise bundler doesn't always like it
+  s.version = '3.8.7.stpst.3'
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Puppet Labs"]
