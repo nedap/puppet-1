@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   #mdata = version.match(/(\d+\.\d+\.\d+)/)
   #s.version = mdata ? mdata[1] : version
   # Hard code this here otherwise bundler doesn't always like it
-  s.version = '3.8.7.stpst.3'
+  s.version = '3.8.7.stpst.4'
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Puppet Labs"]
@@ -39,6 +39,6 @@ Gem::Specification.new do |s|
   #s.rubyforge_project = "puppet"
   s.summary = "Puppet, an automated configuration management tool"
 
-  s.add_dependency(%q<facter>, '2.5.7')
+  s.add_dependency(%q<facter>, '>= 2.5', "< 3")
   s.add_dependency(%q<hiera>, '1.3.4')
 end

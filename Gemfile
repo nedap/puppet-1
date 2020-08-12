@@ -26,7 +26,7 @@ end
 if !ENV['PUPPET_LOADED']
   gem "puppet", :path => File.dirname(__FILE__), :require => false
 end
-gem "facter", '2.5.7'
+gem "facter", '>= 2.5', '< 3'
 gem "hiera", '1.3.4'
 gem "rake", "12.3.3", :require => false
 gem "syck", '1.4.0'
