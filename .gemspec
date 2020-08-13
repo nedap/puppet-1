@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   #mdata = version.match(/(\d+\.\d+\.\d+)/)
   #s.version = mdata ? mdata[1] : version
   # Hard code this here otherwise bundler doesn't always like it
-  s.version = '3.8.7.stpst.4'
+  s.version = '3.8.7.stpst.5'
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Puppet Labs"]
